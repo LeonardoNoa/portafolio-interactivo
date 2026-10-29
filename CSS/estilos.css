@@ -1,0 +1,83 @@
+.tarjeta {
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.tarjeta-rotacion:hover {
+  transform: rotate(10deg);
+}
+
+.tarjeta-escalado:hover {
+  transform: scale(1.1);
+}
+
+.tarjeta-traslacion:hover {
+  transform: translateY(-10px);
+}
+
+.contenedor-3d {
+  perspective: 1000px; 
+}
+
+.tarjeta-3d {
+  transition: transform 0.5s ease;
+  transform-style: preserve-3d;
+}
+
+.tarjeta-3d:hover {
+  transform: rotateX(15deg) rotateY(15deg);
+}
+
+@keyframes deslizarEntrada {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.titulo-animado {
+  animation-name: deslizarEntrada;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-out;
+  animation-iteration-count: 1;
+}
+
+@keyframes girar {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loader {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #e9ecef;
+  border-top-color: #0d6efd;
+  border-radius: 50%;
+  margin: 0 auto;
+  
+  animation-name: girar;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+section {
+  overflow-x: hidden;
+}
+
+.navbar-brand img {
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+  transition: transform 0.3s ease;
+}
+
+.navbar-brand img:hover {
+  transform: scale(1.05);
+}
